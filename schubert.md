@@ -8,7 +8,7 @@ Welcome! There will be many useful things posted here eventually. For now:
     - Hartshorne *Algebraic Geometry* 
     - Eisenbud *Commutative Algebra with a View Towards Algebraic Geometry*
     - Fulton *Intersection Theory*
-- A [review of *Intersection Theory*](https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society-new-series/volume-12/issue-1/Review--William-Fulton-Intersection-theory-and-William-Fulton-Introduction/bams/1183552346.full) by Katz which gives a short history of the subject 
+- A [review of *Intersection Theory*](https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society-new-series/volume-12/issue-1/Review--William-Fulton-Intersection-theory-and-William-Fulton-Introduction/bams/1183552346.full) by Kleiman which gives a short history of the subject 
 
 ![](conics.png)
 
