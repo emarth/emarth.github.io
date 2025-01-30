@@ -12,3 +12,7 @@
 
 - Notes on classifying rotations by an irrational angle on the circle [(PDF)](pdfs/irrational.pdf) 
 
+### "Teaching"
+
+- Winter 2025: Schubert Calculus Learning Seminar [(webpage)](schubert.html)  
+
