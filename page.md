@@ -11,8 +11,9 @@
 ### Other
 
 - Notes on classifying rotations by an irrational angle on the circle [(PDF)](pdfs/irrational.pdf) 
+- Some informal posts on various topics [(blog)](blog/index.html)
 
 ### "Teaching"
 
-- Winter 2025: Schubert Calculus Learning Seminar [(webpage)](schubert.html)  
+- Winter 2025: Schubert Calculus Learning Seminar [(webpage)](pages/schubert.html)  
 
