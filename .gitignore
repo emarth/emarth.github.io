@@ -1,3 +1,3 @@
-drafts/*
-.obsidian/*
-.obsidian.vimrc
+blog/drafts/*
+blog/.obsidian/*
+blog/.obsidian.vimrc
