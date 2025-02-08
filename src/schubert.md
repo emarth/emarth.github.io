@@ -1,5 +1,7 @@
 ## Schubert Calculus Learning Seminar
 
+Room: STEM 565
+
 Welcome! There will be many useful things posted here eventually. For now:
 
 - [*3264 and All That: Intersection Theory in Algebraic Geometry*](https://dash.harvard.edu/handle/1/37367570) by Eisenbud and Harris
