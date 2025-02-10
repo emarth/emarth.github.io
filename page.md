@@ -19,3 +19,4 @@
 
 - Winter 2025: Schubert Calculus Learning Seminar [(webpage)](pages/schubert.html)  
 
+<p style="color:white;">...</p>
