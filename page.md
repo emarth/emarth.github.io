@@ -8,6 +8,8 @@
 
 ### Publications and preprints
 
+- On the motivic decomposition of a hyperplane section of a twisted Milnor hypersurface (preprint) [(PDF)](pdfs/twisted_milnor.pdf)
+
 ### Other
 
 - Notes on classifying rotations by an irrational angle on the circle [(PDF)](pdfs/irrational.pdf) 
