@@ -8,7 +8,7 @@
 
 ### Publications and preprints
 
-- On the motivic decomposition of a hyperplane section of a twisted Milnor hypersurface (preprint) [(PDF)](pdfs/twisted_milnor.pdf)
+- Motives of certain hyperplane sections of Milnor hypersurfaces (preprint) 
 
 ### Other
 
