@@ -8,7 +8,7 @@
 
 ### Publications and preprints
 
-- Motives of certain hyperplane sections of Milnor hypersurfaces (preprint) 
+- Motives of certain hyperplane sections of Milnor hypersurfaces [(preprint)](pdfs/milnor.pdf) 
 
 ### Other
 
