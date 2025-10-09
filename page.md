@@ -8,13 +8,15 @@
 
 ### Publications and preprints
 
-- Motives of certain hyperplane sections of Milnor hypersurfaces [(preprint)](pdfs/milnor.pdf) 
+- (With Charles DeClerq and Kirill Zaynullin) Rost nilpotence for twisted Milnor hypersurfaces [(arXiv)](https://arxiv.org/abs/2510.07095)
+- Motives of certain hyperplane sections of Milnor hypersurfaces [(arXiv)](https://arxiv.org/abs/2507.05434) 
 
 ### Other
 
 - Notes on classifying rotations by an irrational angle on the circle [(PDF)](pdfs/irrational.pdf) 
 - Some informal posts on various topics [(blog)](blog/index.html)
 - Some small programming projects [(github)](https://github.com/emarth) 
+- Modular forms and schemes seminar [(webpage)](pages/modular.html)
 
 ### "Teaching"
 
