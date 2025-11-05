@@ -3,15 +3,16 @@
 ![](fundamental.jpeg)
 
 **Description:** A student seminar for learning about interpretations of modular forms via modular schemes and applications of this approach to characteristic 
-_p_ aspects of modular forms.
+_p_ aspects of modular forms. Talks are on Mondays from 1:00-3:00 in STEM 201.
 
 ### Past Talks
 
-- Review of classical modular forms (Evan Marth, 2025-10-06). Notes in preparation.
+- Review of classical modular forms (2025-10-06).
+
+- More on classical modular forms (2025-10-20).
 
 ### Upcoming Talks 
 
-- Background on families and moduli spaces in algebraic geometry (Evan Marth, 2025-10-20. STM 201, 13:00)
-
+- Families and moduli spaces (2025-10-27).
 
 <p style="color:white;">...</p>
