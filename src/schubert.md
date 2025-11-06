@@ -25,4 +25,7 @@ for classification of line bundles on the circle.
 
 **2025-02-27:** Regular functions and morphisms, category of quasi-projective varieties, maybe fibre products. References: *Hartshorne* I.2-3.
 
+There were 3 more sessions, though they were not recorded here at the time. In the end we covered the Chow ring of Gr(2,4) and used this to 
+compute the number of lines meeting 4 lines in general position in projective space.
+
 ...
