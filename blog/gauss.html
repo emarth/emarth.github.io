@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2025-02-08" />
+  <title>A note on the Gauss sum proof of quadratic reciprocity</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/home/evan/projects/mypage/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">A note on the Gauss sum proof of quadratic
+reciprocity</h1>
+<p class="date">02/08/2025</p>
+</header>
+<p>Recently, I happened upon the following <a
+href="https://mathoverflow.net/questions/1420/whats-the-best-proof-of-quadratic-reciprocity">MathOverflow
+thread</a> about the "best" proofs of the quadratic reciprocity law. One
+particular <a href="https://mathoverflow.net/a/71282">answer</a> caught
+my eye, which explains how the usual Gauss sum proof, say as given in
+Serre’s <em>Cours d’arithmétique</em>, falls out of the Galois theory of
+<img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D%28%5Czeta_%7Bp%7D%29"
+alt="\mathbf{Q}(\zeta_{p})" title="\mathbf{Q}(\zeta_{p})"
+class="math inline" /> and <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BF%7D_%7Bq%7D"
+alt="\mathbf{F}_{q}" title="\mathbf{F}_{q}" class="math inline" />,
+where <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p%2C%20q"
+alt="p, q" title="p, q" class="math inline" /> are the odd primes in
+question. In fact, the resulting proof is not only highly conceptual,
+but it is also offers a "plausible" path by which one could discover
+quadratic reciprocity! The goal of this post is to give a leisurely
+account of the proof in this spirit.</p>
+<p>Let <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" /> be an odd prime. We want to start by
+understanding why a (different) odd prime <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> being a square modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" /> should have anything to due to squares
+modulo <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" />, let alone whether <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" /> is a square modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" />. The answer lies in the isomorphism
+<img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%28%5Cmathbf%7BZ%7D%2F%28p%29%29%5E%5Ctimes%20%5Ccong%20%5Cmathrm%7BGal%7D%28%5Cmathbf%7BQ%7D%28%5Czeta_p%29%2F%5Cmathbf%7BQ%7D%29"
+alt="(\mathbf{Z}/(p))^\times \cong \mathrm{Gal}(\mathbf{Q}(\zeta_p)/\mathbf{Q})"
+title="(\mathbf{Z}/(p))^\times \cong \mathrm{Gal}(\mathbf{Q}(\zeta_p)/\mathbf{Q})"
+class="math inline" />. For starters, the square classes are the index 2
+subgroup of <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%28%5Cmathbf%7BZ%7D%2F%28p%29%29%5E%5Ctimes"
+alt="(\mathbf{Z}/(p))^\times" title="(\mathbf{Z}/(p))^\times"
+class="math inline" />, so Galois theory tells us the corresponding
+automorphisms of <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D%28%5Czeta_p%29"
+alt="\mathbf{Q}(\zeta_p)" title="\mathbf{Q}(\zeta_p)"
+class="math inline" /> over <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D"
+alt="\mathbf{Q}" title="\mathbf{Q}" class="math inline" /> should fix a
+quadratic subfield <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D%20%5Csubseteq%20%5Cmathbf%7BQ%7D%28%5Csqrt%7Bd%7D%29%20%5Csubseteq%20%5Cmathbf%7BQ%7D%28%5Czeta_p%29"
+alt="\mathbf{Q} \subseteq \mathbf{Q}(\sqrt{d}) \subseteq \mathbf{Q}(\zeta_p)"
+title="\mathbf{Q} \subseteq \mathbf{Q}(\sqrt{d}) \subseteq \mathbf{Q}(\zeta_p)"
+class="math inline" />, for some square-free integer <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d" alt="d"
+title="d" class="math inline" />. Then, since <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> is a unit modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" />, whether or not the automorphism <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p%20%5Cmapsto%20%5Czeta_p%5Eq"
+alt="\zeta_p \mapsto \zeta_p^q" title="\zeta_p \mapsto \zeta_p^q"
+class="math inline" /> fixes <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Csqrt%7Bd%7D"
+alt="\sqrt{d}" title="\sqrt{d}" class="math inline" /> tells us if <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> is a square modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" />. Concretely, this automorphism sends
+<img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Csqrt%7Bd%7D"
+alt="\sqrt{d}" title="\sqrt{d}" class="math inline" /> to <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%5Csqrt%7Bd%7D"
+alt="\begin{pmatrix} q \\ p \end{pmatrix} \sqrt{d}"
+title="\begin{pmatrix} q \\ p \end{pmatrix} \sqrt{d}"
+class="math inline" />. Stepping back, it is not hard to see that such
+an element <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> should exists without
+using Galois theory. If <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Csum_%7Bn%20%5Cin%20%5Cmathbf%7BZ%7D%2F%28p%29%5E%5Ctimes%7D%20a_n%20%5Czeta_p%5En"
+alt="\sum_{n \in \mathbf{Z}/(p)^\times} a_n \zeta_p^n"
+title="\sum_{n \in \mathbf{Z}/(p)^\times} a_n \zeta_p^n"
+class="math inline" /> is any element of <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D%28%5Czeta_p%29"
+alt="\mathbf{Q}(\zeta_p)" title="\mathbf{Q}(\zeta_p)"
+class="math inline" />, then the automorphism <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p%20%5Cmapsto%20%5Czeta_p%5Eq"
+alt="\zeta_p \mapsto \zeta_p^q" title="\zeta_p \mapsto \zeta_p^q"
+class="math inline" /> sends it to <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Csum_%7Bn%20%5Cin%20%5Cmathbf%7BZ%7D%2F%28p%29%5E%5Ctimes%7D%20a_n%20%5Czeta_p%5E%7Bnq%7D%20%3D%20%5Csum_%7Bn%20%5Cin%20%5Cmathbf%7BZ%7D%2F%28p%29%5E%5Ctimes%7D%20a_%7Bnq%5E%7B-1%7D%7D%20%5Czeta_p%5E%7Bn%7D"
+alt="\sum_{n \in \mathbf{Z}/(p)^\times} a_n \zeta_p^{nq} = \sum_{n \in \mathbf{Z}/(p)^\times} a_{nq^{-1}} \zeta_p^{n}"
+title="\sum_{n \in \mathbf{Z}/(p)^\times} a_n \zeta_p^{nq} = \sum_{n \in \mathbf{Z}/(p)^\times} a_{nq^{-1}} \zeta_p^{n}"
+class="math inline" />. So if <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> is a square, we want <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20a_%7Bnq%5E%7B-1%7D%7D%20%3D%20a_n"
+alt="a_{nq^{-1}} = a_n" title="a_{nq^{-1}} = a_n" class="math inline" />
+and if not we want <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20a_%7Bnq%5E%7B-1%7D%7D%20%3D%20-%20a_n"
+alt="a_{nq^{-1}} = - a_n" title="a_{nq^{-1}} = - a_n"
+class="math inline" />, but this is accomplished simply by using <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20a_n%20%3D%20%5Cbegin%7Bpmatrix%7Dn%20%5C%5C%20p%5Cend%7Bpmatrix%7D"
+alt="a_n = \begin{pmatrix}n \\ p\end{pmatrix}"
+title="a_n = \begin{pmatrix}n \\ p\end{pmatrix}" class="math inline" />.
+And voilà, the quadratic Gauss sum appears! The action of the Galois
+group on <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> implies that it is
+equal to <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20c%20%5Csqrt%7Bd%7D"
+alt="c \sqrt{d}" title="c \sqrt{d}" class="math inline" /> for some <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20c%20%5Cin%20%5Cmathbf%7BQ%7D%5E%5Ctimes"
+alt="c \in \mathbf{Q}^\times" title="c \in \mathbf{Q}^\times"
+class="math inline" /> and that <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha%5E2%20%5Cin%20%5Cmathbf%7BQ%7D"
+alt="\alpha^2 \in \mathbf{Q}" title="\alpha^2 \in \mathbf{Q}"
+class="math inline" />. In fact, since by construction <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha%20%5Cin%20%5Cmathbf%7BZ%7D%5B%5Czeta_p%5D"
+alt="\alpha \in \mathbf{Z}[\zeta_p]"
+title="\alpha \in \mathbf{Z}[\zeta_p]" class="math inline" /> and <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D"
+alt="\mathbf{Z}" title="\mathbf{Z}" class="math inline" /> is integrally
+closed, we must have <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha%5E2%20%5Cin%20%5Cmathbf%7BZ%7D"
+alt="\alpha^2 \in \mathbf{Z}" title="\alpha^2 \in \mathbf{Z}"
+class="math inline" />. This means <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20c%20%5Cin%20%5Cmathbf%7BZ%7D"
+alt="c \in \mathbf{Z}" title="c \in \mathbf{Z}" class="math inline" />
+by our assumption that <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d" alt="d"
+title="d" class="math inline" /> is square-free. We have <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%5B%5Calpha%5D%20%5Ccong%20%5Cmathbf%7BZ%7D%5Bx%5D%2F%28x%5E2%20-%20d%27%29"
+alt="\mathbf{Z}[\alpha] \cong \mathbf{Z}[x]/(x^2 - d&#39;)"
+title="\mathbf{Z}[\alpha] \cong \mathbf{Z}[x]/(x^2 - d&#39;)"
+class="math inline" />, with <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27%20%3D%20c%5E2%20d"
+alt="d&#39; = c^2 d" title="d&#39; = c^2 d" class="math inline" />.</p>
+<p>Now we can connect things to squares modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> via the obvious isomorphisms <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%5B%5Calpha%5D%2F%28q%29%20%5Ccong%20%5Cmathbf%7BZ%7D%5Bx%5D%2F%28q%2C%20x%5E2%20-%20d%27%29%20%5Ccong%20%5Cmathbf%7BF%7D%20%5Bx%5D%2F%28x%5E2%20-%20d%27%29"
+alt="\mathbf{Z}[\alpha]/(q) \cong \mathbf{Z}[x]/(q, x^2 - d&#39;) \cong \mathbf{F} [x]/(x^2 - d&#39;)"
+title="\mathbf{Z}[\alpha]/(q) \cong \mathbf{Z}[x]/(q, x^2 - d&#39;) \cong \mathbf{F} [x]/(x^2 - d&#39;)"
+class="math inline" /> <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A%20%3A%3D%20%5Cmathbf%7BF_q%7D%5Bx%5D%2F%28x%5E2%20-%20d%27%29"
+alt="A := \mathbf{F_q}[x]/(x^2 - d&#39;)"
+title="A := \mathbf{F_q}[x]/(x^2 - d&#39;)" class="math inline" />
+depends on <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbegin%7Bpmatrix%7D%20d%27%20%5C%5C%20q%5Cend%7Bpmatrix%7D"
+alt="\begin{pmatrix} d&#39; \\ q\end{pmatrix}"
+title="\begin{pmatrix} d&#39; \\ q\end{pmatrix}" class="math inline" />
+in the following way: if <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" /> is 0 modulo <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" />, then <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A" alt="A"
+title="A" class="math inline" /> is the dual numbers over <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BF%7D_q"
+alt="\mathbf{F}_q" title="\mathbf{F}_q" class="math inline" />. If <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" /> is a non-zero square,
+then since <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> is odd <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20x%5E2%20-%20d%27"
+alt="x^2 - d&#39;" title="x^2 - d&#39;" class="math inline" /> has two
+distinct roots in <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BF%7D_q"
+alt="\mathbf{F}_q" title="\mathbf{F}_q" class="math inline" />, so <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A%20%5Ccong%20%5Cmathbf%7BF%7D_q%20%5Ctimes%20%5Cmathbf%7BF%7D_q"
+alt="A \cong \mathbf{F}_q \times \mathbf{F}_q"
+title="A \cong \mathbf{F}_q \times \mathbf{F}_q" class="math inline" />,
+and if <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" /> is not a square, <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A%20%5Ccong%20%5Cmathbf%7BF%7D_%7Bq%5E2%7D"
+alt="A \cong \mathbf{F}_{q^2}" title="A \cong \mathbf{F}_{q^2}"
+class="math inline" />. But all of these rings can be distinguished from
+one another by the Frobenius endomorphism, which is nothing but the
+Galois action <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p%20%5Cmapsto%20%5Czeta_p%5Eq"
+alt="\zeta_p \mapsto \zeta_p^q" title="\zeta_p \mapsto \zeta_p^q"
+class="math inline" /> on <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%5B%5Calpha%5D"
+alt="\mathbf{Z}[\alpha]" title="\mathbf{Z}[\alpha]"
+class="math inline" /> modulo <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" />. Precisely, letting <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha_q%20%3D%20%5Csum_%7Bn%20%5Cin%20%5Cmathbf%7BZ%7D%2F%28p%29%5E%5Ctimes%7D%20%5Cbegin%7Bpmatrix%7D%20n%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%28%5Czeta_p%5E%7Bq%7D%29%5En"
+alt="\alpha_q = \sum_{n \in \mathbf{Z}/(p)^\times} \begin{pmatrix} n \\ p \end{pmatrix} (\zeta_p^{q})^n"
+title="\alpha_q = \sum_{n \in \mathbf{Z}/(p)^\times} \begin{pmatrix} n \\ p \end{pmatrix} (\zeta_p^{q})^n"
+class="math inline" />, we have that the images of <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha_q"
+alt="\alpha_q" title="\alpha_q" class="math inline" /> and <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha%5Eq"
+alt="\alpha^q" title="\alpha^q" class="math inline" /> coincide in <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A" alt="A"
+title="A" class="math inline" />. Assuming that <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> does not divide <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" />, and letting <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbar%7B%5Calpha%7D"
+alt="\bar{\alpha}" title="\bar{\alpha}" class="math inline" />, <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbar%7B%5Calpha%7D_q"
+alt="\bar{\alpha}_q" title="\bar{\alpha}_q" class="math inline" />
+denote the respective images of <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha%2C%20%5Calpha_q"
+alt="\alpha, \alpha_q" title="\alpha, \alpha_q" class="math inline" />
+in <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A" alt="A"
+title="A" class="math inline" />, the Frobenius endomorphism on <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A" alt="A"
+title="A" class="math inline" /> is either the identity, so in
+particular fixes <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbar%7B%5Calpha%7D"
+alt="\bar{\alpha}" title="\bar{\alpha}" class="math inline" />, or it
+sends <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbar%7B%5Calpha%7D"
+alt="\bar{\alpha}" title="\bar{\alpha}" class="math inline" /> to <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20-%20%5Cbar%7B%5Calpha%7D"
+alt="- \bar{\alpha}" title="- \bar{\alpha}" class="math inline" />. Our
+characterisation of <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20A" alt="A"
+title="A" class="math inline" /> shows that <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbar%7B%5Calpha%7D%5Eq%20%3D%20%5Cbegin%7Bpmatrix%7D%20d%27%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D%20%5Cbar%7B%5Calpha%7D"
+alt="\bar{\alpha}^q = \begin{pmatrix} d&#39; \\ q \end{pmatrix} \bar{\alpha}"
+title="\bar{\alpha}^q = \begin{pmatrix} d&#39; \\ q \end{pmatrix} \bar{\alpha}"
+class="math inline" />, but we have just noted that <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Cbar%7B%5Calpha%7D%5Eq%20%3D%20%5Cbar%7B%5Calpha%7D_q%20%3D%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%5Cbar%7B%5Calpha%7D"
+alt="\bar{\alpha}^q = \bar{\alpha}_q = \begin{pmatrix} q \\ p \end{pmatrix} \bar{\alpha}"
+title="\bar{\alpha}^q = \bar{\alpha}_q = \begin{pmatrix} q \\ p \end{pmatrix} \bar{\alpha}"
+class="math display" /> hence <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%3D%20%5Cbegin%7Bpmatrix%7D%20d%27%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D"
+alt="\begin{pmatrix} q \\ p \end{pmatrix} = \begin{pmatrix} d&#39; \\ q \end{pmatrix}"
+title="\begin{pmatrix} q \\ p \end{pmatrix} = \begin{pmatrix} d&#39; \\ q \end{pmatrix}"
+class="math inline" />.</p>
+<p>Now, we need only compute <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27%20%3D%20%5Calpha%5E2"
+alt="d&#39; = \alpha^2" title="d&#39; = \alpha^2" class="math inline" />
+(and hope it gives us a nice answer!). To this end, it will be useful to
+fix <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p"
+alt="\zeta_p" title="\zeta_p" class="math inline" /> as the complex
+number <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathrm%7Bexp%7D%282%20%5Cpi%20i%20%2F%20p%29"
+alt="\mathrm{exp}(2 \pi i / p)" title="\mathrm{exp}(2 \pi i / p)"
+class="math inline" />, then <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> is just the the
+Fourier transform <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20F" alt="F"
+title="F" class="math inline" /> (with respect to the group <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%2F%28p%29"
+alt="\mathbf{Z}/(p)" title="\mathbf{Z}/(p)" class="math inline" />) of
+the Legendre symbol, evaluated at the character <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20n%20%5Cmapsto%20%5Czeta_p%5En"
+alt="n \mapsto \zeta_p^n" title="n \mapsto \zeta_p^n"
+class="math inline" />. For <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20m" alt="m"
+title="m" class="math inline" /> coprime to <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" />, and <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cchi_m%20%5Cin%20%5Cwidehat%7B%5Cmathbf%7BZ%7D%2F%28p%29%7D"
+alt="\chi_m \in \widehat{\mathbf{Z}/(p)}"
+title="\chi_m \in \widehat{\mathbf{Z}/(p)}" class="math inline" />,
+defined by <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cchi%28n%29%20%3D%20%5Czeta_p%5E%7Bn%20m%7D"
+alt="\chi(n) = \zeta_p^{n m}" title="\chi(n) = \zeta_p^{n m}"
+class="math inline" />, <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20F%28%5Cchi_m%29%20%3D%20%5Cpm%20%5Calpha"
+alt="F(\chi_m) = \pm \alpha" title="F(\chi_m) = \pm \alpha"
+class="math inline" />, as this is just a conjugate of <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> under <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p%20%5Cmapsto%20%5Czeta_p%5Em"
+alt="\zeta_p \mapsto \zeta_p^m" title="\zeta_p \mapsto \zeta_p^m"
+class="math inline" />. <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20F" alt="F"
+title="F" class="math inline" /> evaluated at the trivial character is
+0, since there is an equal amount of non-zero squares and non-squares
+modulo <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p" alt="p"
+title="p" class="math inline" />. A useful property of the Fourier
+transform is the Plancherel formula, that is <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%7C%7Cf%7C%7C%5E2%20%3D%20%7C%7C%5Chat%7Bf%7D%7C%7C%5E2"
+alt="||f||^2 = ||\hat{f}||^2" title="||f||^2 = ||\hat{f}||^2"
+class="math inline" />. In the case of <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%2F%28p%29"
+alt="\mathbf{Z}/(p)" title="\mathbf{Z}/(p)" class="math inline" />, this
+is expressed as <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Csum_%7Bn%20%5Cin%20%5Cmathbf%7BZ%7D%2F%28p%29%7D%20%7Cf%28n%29%7C%5E2%20%3D%20%5Cfrac%7B1%7D%7Bp%7D%20%5Csum_%7B%5Cchi%20%5Cin%20%5Cwidehat%7B%5Cmathbf%7BZ%7D%2F%28p%29%7D%7D%20%7C%5Chat%7Bf%7D%28%5Cchi%29%7C%5E2"
+alt="\sum_{n \in \mathbf{Z}/(p)} |f(n)|^2 = \frac{1}{p} \sum_{\chi \in \widehat{\mathbf{Z}/(p)}} |\hat{f}(\chi)|^2"
+title="\sum_{n \in \mathbf{Z}/(p)} |f(n)|^2 = \frac{1}{p} \sum_{\chi \in \widehat{\mathbf{Z}/(p)}} |\hat{f}(\chi)|^2"
+class="math display" />since the dual measure on <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cwidehat%7B%5Cmathbf%7BZ%7D%2F%28p%29%7D"
+alt="\widehat{\mathbf{Z}/(p)}" title="\widehat{\mathbf{Z}/(p)}"
+class="math inline" /> with respect to the counting measure on <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BZ%7D%2F%28p%29"
+alt="\mathbf{Z}/(p)" title="\mathbf{Z}/(p)" class="math inline" /> is
+the normalised counting measure. If <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20f" alt="f"
+title="f" class="math inline" /> is the Legendre symbol, the formula
+gives <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20p-1%20%3D%20%5Cfrac%7Bp-1%7D%7Bp%7D%20%7C%5Calpha%7C%5E2"
+alt="p-1 = \frac{p-1}{p} |\alpha|^2"
+title="p-1 = \frac{p-1}{p} |\alpha|^2" class="math inline" />, i.e. <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%7Cd%27%7C%20%3D%20p"
+alt="|d&#39;| = p" title="|d&#39;| = p" class="math inline" />. Great!
+We now know that our assumption that <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" /> is coprime to <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20q" alt="q"
+title="q" class="math inline" /> was valid, and so we can use the
+formula <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%3D%20%5Cbegin%7Bpmatrix%7D%20d%27%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D%20%3D%20%5Cbegin%7Bpmatrix%7D%20%5Cpm%20p%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D"
+alt="\begin{pmatrix} q \\ p \end{pmatrix} = \begin{pmatrix} d&#39; \\ q \end{pmatrix} = \begin{pmatrix} \pm p \\ q \end{pmatrix}"
+title="\begin{pmatrix} q \\ p \end{pmatrix} = \begin{pmatrix} d&#39; \\ q \end{pmatrix} = \begin{pmatrix} \pm p \\ q \end{pmatrix}"
+class="math inline" />, so we need only work out the sign. To do this,
+we just need to look at how <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> behaves under complex
+conjugation, since the sign of <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27"
+alt="d&#39;" title="d&#39;" class="math inline" /> corresponds to <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> being real or
+imaginary. In <img style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cmathbf%7BQ%7D%28%5Czeta_p%29%20%5Csubseteq%20%5Cmathbf%7BC%7D"
+alt="\mathbf{Q}(\zeta_p) \subseteq \mathbf{C}"
+title="\mathbf{Q}(\zeta_p) \subseteq \mathbf{C}" class="math inline" />,
+complex conjugation restricts to the automorphism defined by <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Czeta_p%20%5Cmapsto%20%5Czeta_p%5E%7B-1%7D"
+alt="\zeta_p \mapsto \zeta_p^{-1}" title="\zeta_p \mapsto \zeta_p^{-1}"
+class="math inline" />, so the complex conjugate of <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Calpha"
+alt="\alpha" title="\alpha" class="math inline" /> is <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20%5Cbegin%7Bpmatrix%7D%20-1%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%5Calpha%20%3D%20%28-1%29%5E%7B%5Cfrac%7Bp-1%7D%7B2%7D%7D%20%5Calpha"
+alt="\begin{pmatrix} -1 \\ p \end{pmatrix} \alpha = (-1)^{\frac{p-1}{2}} \alpha"
+title="\begin{pmatrix} -1 \\ p \end{pmatrix} \alpha = (-1)^{\frac{p-1}{2}} \alpha"
+class="math inline" />. We thus conclude that <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Ctextstyle%20d%27%20%3D%20%28-1%29%5E%7B%5Cfrac%7Bp-1%7D%7B2%7D%7D%20p"
+alt="d&#39; = (-1)^{\frac{p-1}{2}} p"
+title="d&#39; = (-1)^{\frac{p-1}{2}} p" class="math inline" />. A quick
+computation with Legendre symbols then yields <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%20%3D%20%5Cbegin%7Bpmatrix%7D%20-1%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D%5E%5Cfrac%7Bp-1%7D%7B2%7D%20%5Cbegin%7Bpmatrix%7D%20p%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D%20%3D%20%28-1%29%5E%7B%5Cfrac%7Bq-1%7D%7B2%7D%20%5Cfrac%7Bp-1%7D%7B2%7D%7D%20%5Cbegin%7Bpmatrix%7D%20p%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D"
+alt="\begin{pmatrix} q \\ p \end{pmatrix}  = \begin{pmatrix} -1 \\ q \end{pmatrix}^\frac{p-1}{2} \begin{pmatrix} p \\ q \end{pmatrix} = (-1)^{\frac{q-1}{2} \frac{p-1}{2}} \begin{pmatrix} p \\ q \end{pmatrix}"
+title="\begin{pmatrix} q \\ p \end{pmatrix}  = \begin{pmatrix} -1 \\ q \end{pmatrix}^\frac{p-1}{2} \begin{pmatrix} p \\ q \end{pmatrix} = (-1)^{\frac{q-1}{2} \frac{p-1}{2}} \begin{pmatrix} p \\ q \end{pmatrix}"
+class="math display" /> or in its more traditional form <img
+style="vertical-align:middle"
+src="https://latex.codecogs.com/svg.latex?%5Cdisplaystyle%20%5Cbegin%7Bpmatrix%7D%20p%20%5C%5C%20q%20%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7D%20q%20%5C%5C%20p%20%5Cend%7Bpmatrix%7D%20%3D%20%28-1%29%5E%7B%5Cfrac%7Bp-1%7D%7B2%7D%20%5Cfrac%7Bq-1%7D%7B2%7D%7D"
+alt="\begin{pmatrix} p \\ q \end{pmatrix} \begin{pmatrix} q \\ p \end{pmatrix} = (-1)^{\frac{p-1}{2} \frac{q-1}{2}}"
+title="\begin{pmatrix} p \\ q \end{pmatrix} \begin{pmatrix} q \\ p \end{pmatrix} = (-1)^{\frac{p-1}{2} \frac{q-1}{2}}"
+class="math display" /> <strong>QED</strong></p>
+</body>
+</html>
