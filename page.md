@@ -3,7 +3,7 @@
 ### About me
 
 - Masters Student at the University of Ottawa under the supervision of [Kirill Zaynullin](https://kirillmath.ca/).
-- Interested in algebraic and arithmetic geometry.
+- General areas of interest: algebraic geometry, number theory.
 - E-mail: *emart133 AT uottawa DOT ca*
 
 ### Publications and preprints
