@@ -11,7 +11,7 @@ _p_ aspects of modular forms. Talks are on Mondays from 1:00-3:00 in STEM 201.
 
 - More on classical modular forms (2025-10-20).
 
-- Families and moduli spaces (2025-10-27) [handwritten notes](../pdfs/modular_talk3.pdf).
+- Families and moduli spaces (2025-10-27).
 
 - Moduli of elliptic curves (2025-11-03).
 

@@ -2,7 +2,7 @@
 
 ### About me
 
-- Masters Student at the University of Ottawa under the supervision of [Kirill Zaynullin](https://kirillmath.ca/).
+- PhD student at the University of Duisburg-Essen (advisor: [Ulrich Görtz](https://www.esaga.uni-due.de/ulrich.goertz/)). 
 - General areas of interest: algebraic geometry, number theory.
 - E-mail: *emart133 AT uottawa DOT ca*
 
@@ -17,9 +17,7 @@
 
 ### Other
 
-- Some informal posts on various topics [(blog)](blog/index.html)
 - Modular forms and schemes seminar [(webpage)](pages/modular.html)
-- Some small programming projects [(github)](https://github.com/emarth) 
 - Notes on classifying rotations by an irrational angle on the circle [(PDF)](pdfs/irrational.pdf) 
 
 ### "Teaching"
